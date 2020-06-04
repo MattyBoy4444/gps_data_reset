@@ -5,9 +5,9 @@
 Pod::Spec.new do |s|
   s.name             = 'gps_data_reset'
   s.version          = '0.0.1'
-  s.summary          = 'GPS Data Reset'
+  s.summary          = 'Flutter plugin to send extra command for reset and re-download GPS data.'
   s.description      = <<-DESC
-GPS Data Reset
+Flutter plugin to send extra command for reset and re-download GPS data.
                        DESC
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }

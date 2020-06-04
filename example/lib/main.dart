@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'package:permission_handler/permission_handler.dart';
 import 'package:gps_data_reset/gps_data_reset.dart';
 
 void main() {
@@ -13,7 +11,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   void initState() {
     super.initState();
@@ -27,11 +24,19 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: FlatButton(child: Text("Reset and Download GPS"), onPressed: () async{
-            if (await Permission.location.request().isGranted) {
-              GpsDataReset.resetAndDownload();
-            }
-          },),
+          child: FlatButton(
+            child: Text('Reset GPS Data'),
+            onPressed: () async {
+              GPSResetStatus status = await GPSDataReset.resetAndDownload();
+              if (status == GPSResetStatus.SUCCESS) {
+                print("Reset succes");
+              } else if (status == GPSResetStatus.DENIED) {
+                print("User rejected permission");
+              } else if (status == GPSResetStatus.PERMANENTLY_DENIED) {
+                GPSDataReset.openAppSettings();
+              }
+            },
+          ),
         ),
       ),
     );

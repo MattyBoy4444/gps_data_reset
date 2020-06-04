@@ -80,7 +80,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.1"
+    version: "1.0.0"
   image:
     dependency: transitive
     description:
@@ -110,12 +110,12 @@ packages:
     source: hosted
     version: "1.6.4"
   permission_handler:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: permission_handler
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.0.0+hotfix.6"
+    version: "5.0.0+hotfix.8"
   permission_handler_platform_interface:
     dependency: transitive
     description:
