@@ -7,3 +7,8 @@
 
 * Implement new flutter plugin api.
 * check permissions
+
+
+## 2.0.0
+
+* Null safety
